@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White for light mode */
+    --foreground: 240 10% 3.9%; /* Dark gray for light mode text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 300 100% 50%; /* Vibrant Magenta */
+    --primary-foreground: 300 100% 98%; /* Light color for text on magenta */
+
+    --secondary: 0 0% 96.1%; /* Light gray for light mode secondary elements */
+    --secondary-foreground: 240 10% 3.9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%; /* Muted text for light mode */
+
+    --accent: 180 100% 50%; /* Electric Cyan */
+    --accent-foreground: 180 100% 5%; /* Dark color for text on cyan */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%; /* Light gray border for light mode */
+    --input: 0 0% 89.8%;
+    --ring: 180 100% 50%; /* Cyan for focus rings */
+    --radius: 0.5rem;
+
+    /* Chart colors (can be adjusted) */
+    --chart-1: 300 76% 61%; /* Magenta variant */
+    --chart-2: 180 58% 39%; /* Cyan variant */
+    --chart-3: 210 70% 50%; /* Blue variant */
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Sidebar specific colors for light theme */
+    --sidebar-background: 0 0% 98%; /* Slightly off-white */
+    --sidebar-foreground: 240 5.3% 26.1%; /* Darker text for sidebar */
+    --sidebar-primary: 300 100% 50%; /* Magenta */
+    --sidebar-primary-foreground: 300 100% 98%;
+    --sidebar-accent: 0 0% 92%; /* Lighter accent for hover */
+    --sidebar-accent-foreground: 240 10% 3.9%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 180 100% 50%; /* Cyan */
+  }
+
+  .dark {
+    --background: 0 0% 4%; /* Very Dark Gray #0A0A0A */
+    --foreground: 0 0% 98%; /* Light gray for dark mode text */
+
+    --card: 0 0% 8%; /* Slightly lighter dark for cards */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%; /* Darker popover */
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 300 100% 50%; /* Vibrant Magenta */
+    --primary-foreground: 300 100% 98%;
+
+    --secondary: 0 0% 12%; /* Dark gray for dark mode secondary */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 63.9%; /* Muted text for dark mode */
+
+    --accent: 180 100% 50%; /* Electric Cyan */
+    --accent-foreground: 180 100% 5%;
+
+    --destructive: 0 72.2% 50.6%; /* Adjusted for dark mode */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%; /* Darker border for dark mode */
+    --input: 0 0% 14.9%;
+    --ring: 180 100% 50%; /* Cyan for focus rings */
+
+    /* Chart colors for dark theme (can be adjusted) */
+    --chart-1: 300 80% 70%; /* Lighter Magenta variant */
+    --chart-2: 180 70% 60%; /* Lighter Cyan variant */
+    --chart-3: 210 80% 65%; /* Lighter Blue variant */
+    --chart-4: 43 80% 70%;
+    --chart-5: 27 90% 70%;
+    
+    /* Sidebar specific colors for dark theme */
+    --sidebar-background: 0 0% 6%; /* Dark background for sidebar */
+    --sidebar-foreground: 0 0% 80%; /* Lighter text for sidebar */
+    --sidebar-primary: 300 100% 50%; /* Magenta */
+    --sidebar-primary-foreground: 300 100% 98%;
+    --sidebar-accent: 0 0% 10%; /* Darker accent for hover */
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 180 100% 50%; /* Cyan */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), sans-serif;
+  }
+}
+
+/* Custom glassmorphism styles */
+.glass-card {
+  @apply bg-card/30 backdrop-blur-xl border border-white/10 shadow-lg;
+}
+
+.dark .glass-card {
+ /* For dark mode, use a slightly different opacity or base color if needed */
+  @apply bg-neutral-800/30 backdrop-blur-xl border-neutral-700/50 shadow-lg;
+}
